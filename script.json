@@ -1,0 +1,40 @@
+{
+  "permissions": null,
+  "name": "镜花水月",
+  "color": "rgba(28, 140, 255,1)",
+  "entry": "index.tsx",
+  "version": "1.0.2",
+  "localizedDescriptions": {
+    "ja": "",
+    "en": "",
+    "zh": "",
+    "fr": "",
+    "pt": "",
+    "it": "",
+    "de": "",
+    "ru": "",
+    "es": ""
+  },
+  "icon": "livephoto",
+  "iconImage": "",
+  "localizedNames": {
+    "de": "",
+    "en": "",
+    "ru": "",
+    "it": "",
+    "zh": "",
+    "es": "",
+    "ja": "",
+    "pt": "",
+    "fr": ""
+  },
+  "intentInputTypes": [],
+  "author": {
+    "homepage": "https://github.com/7452323",
+    "name": "7452323",
+    "email": "7452323@gmail.com"
+  },
+  "description": "镜花水月",
+  "runInApp": false,
+  "contributors": []
+}
