@@ -1,0 +1,25 @@
+name: Bootstrap project root
+on:
+  push:
+    branches: [main]
+permissions:
+  contents: write
+jobs:
+  bootstrap:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Publish project from maintained monorepo
+        shell: bash
+        run: |
+          set -euo pipefail
+          tmp="$(mktemp -d)"
+          curl -L --fail "https://github.com/cc166/scripting-scripts/archive/refs/heads/main.tar.gz" -o "$tmp/source.tar.gz"
+          tar -xzf "$tmp/source.tar.gz" -C "$tmp"
+          find . -mindepth 1 -maxdepth 1 ! -name .git -exec rm -rf {} +
+          cp -a "$tmp/scripting-scripts-main/镜花水月/." .
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add -A
+          git commit -m "Publish 镜花水月"
+          git push origin HEAD:main
